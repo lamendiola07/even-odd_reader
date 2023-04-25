@@ -7,3 +7,23 @@
 
 # create method to open text files: numbers.txt, even.txt , and odd.txt
 with open("numbers.txt") as integer_file, open("even.txt", "a") as even_integer_extraction, open("odd.txt", "a") as odd_integer_extraction:
+
+# read numbers.txt to determine integer placement
+    for line in integer_file:
+        line_placement = int(line)
+
+        # if integer line placement is even,
+        if line_placement % 2 == 0:
+            even_integer = line_placement
+
+            # overwrites to even.txt
+            even_integer_extraction.write(str(even_integer) + '\n')
+        
+        # if integer line placement is odd,
+        else:
+            odd_integer = line_placement
+
+            #overwrites to odd.txt
+            odd_integer_extraction.write(str(odd_integer) + '\n')
+            
+            
